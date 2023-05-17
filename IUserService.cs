@@ -1,10 +1,17 @@
-﻿namespace EasylifeAPI.Services
+﻿using EasylifeAPI.Models;
+
+namespace EasylifeAPI.Services
 {
     public interface IUserService
     {
-        List<User> GetUsers();
+        Task<List<User>> GetUsers();
         User GetById(int id);
-        void Register(UserRegister newUser);
-        
+        User GetByPhone(string phoneNumber );
+        User GetByEmail(string email);
+        User GetByNIE(string NIE);
+        void Delete(int id);
+        void AddClient(Client client);
+        void AddWorker(Worker client);
+        void SaveChanges();
     }
 }
